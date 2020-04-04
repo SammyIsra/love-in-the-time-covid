@@ -12,6 +12,16 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+
+  - name: "tweet"
+    label: "Tweet"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Title", name: "title", widget: "string"}
+
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"
