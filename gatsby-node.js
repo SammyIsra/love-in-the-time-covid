@@ -7,7 +7,7 @@ exports.createPages = ({ actions, graphql }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField, createNode  } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
 
   if (node.internal.type === `MarkdownRemark`) {
@@ -17,5 +17,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       value,
     })
+  } 
+
+  if (node.internal.type === "File" && node.sourceInstanceName === "posts") {
+    createNodeField({
+      node,
+      name: "post",
+      value: require(node.absolutePath),
+    });
+    // console.log(node);
+    // console.log(require(node.absolutePath));
   }
 }
