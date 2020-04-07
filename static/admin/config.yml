@@ -2,19 +2,18 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: 'Create {{collection}} “{{slug}}”'
-    update: 'Update {{collection}} “{{slug}}”'
-    delete: 'Delete {{collection}} “{{slug}}”'
-    uploadMedia: '[skip ci] Upload “{{path}}”'
-    deleteMedia: '[skip ci] Delete “{{path}}”'
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-
   - name: "posts"
-    label: "Post"
+    label: "All Post"
     folder: "src/posts"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
@@ -23,16 +22,141 @@ collections:
     sortableFields: ["commit_date", "title", "commit_author"]
     format: "json"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-      - {label: "Title", name: "title", widget: "string", required: true}
-      - {label: "Summary", name: "summary", widget: "string"}
-      - label: "Type" 
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - label: "Type"
         name: "type"
         default: "text"
         widget: "select"
         required: true
-        options: 
+        options:
           - { label: "Text", value: "text" }
           - { label: "Online article", value: "article" }
           - { label: "Tweet", value: "tweet" }
-          - { label: "Image", value: "iamge" }
+          - { label: "Image", value: "image" }
+
+  - name: "texts"
+    label: "Texts"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    sortableFields: ["commit_date", "title", "commit_author"]
+    format: "json"
+    filter: { field: "type", value: "text" }
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - label: "Type"
+        name: "type"
+        default: "text"
+        widget: "select"
+        required: true
+        options:
+          - { label: "Text", value: "text" }
+          - { label: "Online article", value: "article" }
+          - { label: "Tweet", value: "tweet" }
+          - { label: "Image", value: "image" }
+
+  - name: "articles"
+    label: "Articles"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    sortableFields: ["commit_date", "title", "commit_author"]
+    format: "json"
+    filter: { field: "type", value: "article" }
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - label: "Type"
+        name: "type"
+        default: "text"
+        widget: "select"
+        required: true
+        options:
+          - { label: "Text", value: "text" }
+          - { label: "Online article", value: "article" }
+          - { label: "Tweet", value: "tweet" }
+          - { label: "Image", value: "image" }
+
+  - name: "tweets"
+    label: "Tweets"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    sortableFields: ["commit_date", "title", "commit_author"]
+    format: "json"
+    filter: { field: "type", value: "tweet" }
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - label: "Type"
+        name: "type"
+        default: "text"
+        widget: "select"
+        required: true
+        options:
+          - { label: "Text", value: "text" }
+          - { label: "Online article", value: "article" }
+          - { label: "Tweet", value: "tweet" }
+          - { label: "Image", value: "image" }
+
+  - name: "images"
+    label: "Images"
+    folder: "src/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    editor:
+      preview: false
+    sortableFields: ["commit_date", "title", "commit_author"]
+    format: "json"
+    filter: { field: "type", value: "image" }
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Summary", name: "summary", widget: "string" }
+      - label: "Type"
+        name: "type"
+        default: "text"
+        widget: "select"
+        required: true
+        options:
+          - { label: "Text", value: "text" }
+          - { label: "Online article", value: "article" }
+          - { label: "Tweet", value: "tweet" }
+          - { label: "Image", value: "image" }

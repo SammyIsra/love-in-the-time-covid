@@ -1,11 +1,50 @@
 import React from "react";
+import { graphql, PageProps } from "gatsby";
 
-const IndexPage: React.FC = (props) => {
-    return (
-        <div>
-            Howdy there friends
-        </div>
-    )
-}
+import FeelGoodPostList, { FeelGoodPost } from "../components/FeelGoodPostList";
+import { IndexPageLayout } from "../components/layout/indexPage";
 
-export default IndexPage
+const IndexPage: React.FC<PageProps<pageQueryData>> = (props) => {
+  // Extract the posts from the GraphQL data
+  const posts: FeelGoodPost[] = props.data.allFile.edges.map(
+    (edge) => edge.node.fields.post
+  );
+
+  return (
+    <IndexPageLayout>
+      <FeelGoodPostList posts={posts} />
+    </IndexPageLayout>
+  );
+};
+
+export default IndexPage;
+
+export const pageQuery = graphql`
+  query MyQuery {
+    allFile(filter: { sourceInstanceName: { eq: "posts" } }) {
+      edges {
+        node {
+          fields {
+            post {
+              summary
+              title
+              type
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+type pageQueryData = {
+  allFile: {
+    edges: {
+      node: {
+        fields: {
+          post: FeelGoodPost;
+        };
+      };
+    }[];
+  };
+};
