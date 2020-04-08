@@ -6,17 +6,33 @@ export const IndexPageLayout: React.FC = function(props) {
     <LayoutBody>
       <div style={{ gridRow: 1, gridColumn: 1 }}>Logo Here</div>
       <div style={{ gridRow: 1, gridColumn: 5 }}>About</div>
-      <div style={{ width: "100%", height: "100%", gridRow: 3, gridColumn: 3 }}>
-        {props.children}
-      </div>
+      <IndexBody>{props.children}</IndexBody>
       <div style={{ gridRow: 5, gridColumn: 1 }}>Recovered Count</div>
       <div style={{ gridRow: 5, gridColumn: 5 }}>Visitor Count</div>
     </LayoutBody>
   );
 };
 
+const IndexBody = styled.div`
+  width: 100%;
+  height: 100%;
+  grid-column: 1 / 6;
+  grid-row: 2/5;
+
+  @media (min-width: 550px) {
+    grid-column: 2 / 5;
+  }
+
+  @media (min-width: 775px) {
+    grid-column: 3;
+    grid-row: 3;
+  }
+`;
+
 export const VerticalSnapContainer = styled.div`
+  height: 100%;
   scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 `;
 
 export const SnapItem = styled.div`
@@ -31,6 +47,6 @@ const LayoutBody = styled.div`
   left: 0;
   top: 0;
   display: grid;
-  grid-template-rows: 10rem 1fr minmax(300px, 1fr) 1fr 10rem;
-  grid-template-columns: 10rem auto minmax(300px, 1fr) auto 10rem;
+  grid-template-rows: 10rem 1fr 3fr 2fr 10rem;
+  grid-template-columns: 10rem 1fr 5fr 1fr 10rem;
 `;

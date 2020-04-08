@@ -31,9 +31,13 @@ const FeelGoodPostList: React.FC<{
   console.log(props);
   return (
     <VerticalSnapContainer>
+      <SnapItem>Welcome to {"<Insert title here>"}</SnapItem>
       {props.posts.map((post) => (
         <SnapItem>{post.title}</SnapItem>
       ))}
+      <SnapItem>
+        That is all for today! Come back tomorrow for more good vibes 💛
+      </SnapItem>
     </VerticalSnapContainer>
   );
 };
