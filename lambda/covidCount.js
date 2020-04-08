@@ -3,7 +3,9 @@ import fetch from "node-fetch";
 // For more info, check https://www.netlify.com/docs/functions/#javascript-lambda-functions
 module.exports.handler = function(event, context) {
   console.log("queryStringParameters", event.queryStringParameters);
-  return fetch("https://covidapi.info/api/v1/global")
+  return fetch("https://covidapi.info/api/v1/global", {
+    headers: { Accept: "application/json" },
+  })
     .then((response) => response.json())
     .then((data) => {
       console.log("Response from API:", data);
