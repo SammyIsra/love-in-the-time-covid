@@ -1,10 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { RecoveredCount } from "../RecoveredCount";
 
 export const IndexPageLayout: React.FC = function(props) {
   return (
     <LayoutBody>
-      <div style={{ gridRow: 1, gridColumn: 1 }}>Logo Here</div>
+      <div style={{ gridRow: 1, gridColumn: 1 }}>
+        <RecoveredCount />
+      </div>
       <div style={{ gridRow: 1, gridColumn: 5 }}>About</div>
       <IndexBody>{props.children}</IndexBody>
       <div style={{ gridRow: 5, gridColumn: 1 }}>Recovered Count</div>
