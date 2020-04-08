@@ -1,3 +1,5 @@
+import fetch from "node-fetch";
+
 // For more info, check https://www.netlify.com/docs/functions/#javascript-lambda-functions
 module.exports.handler = function(event, context) {
   console.log("queryStringParameters", event.queryStringParameters);
