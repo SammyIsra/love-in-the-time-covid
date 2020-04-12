@@ -2,11 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { RecoveredCount } from "../RecoveredCount";
 import { VisitorCount } from "../VisitorCount";
+import { Helmet } from "react-helmet";
+
+import LogoNegative from "../../img/logo_negative.svg";
 
 export const IndexPageLayout: React.FC = function(props) {
   return (
     <LayoutBody>
-      <div style={{ gridRow: 1, gridColumn: 1 }}>Logo goes here</div>
+      <Helmet>
+        <title>CoVibes</title>
+        <link
+          href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap"
+          rel="stylesheet"
+        ></link>
+      </Helmet>
+      <div style={{ gridRow: 1, gridColumn: 1 }}>
+        <img src={LogoNegative} alt="Heart in a char buttle" width="100%" />
+      </div>
       <div style={{ gridRow: 1, gridColumn: 5 }}>About</div>
       <IndexBody>{props.children}</IndexBody>
       <div style={{ gridRow: 5, gridColumn: 1 }}>
@@ -47,6 +59,7 @@ export const SnapItem = styled.div`
 `;
 
 const LayoutBody = styled.div`
+  font-family: "Work Sans", sans-serif;
   position: fixed;
   width: 100%;
   height: 100%;
