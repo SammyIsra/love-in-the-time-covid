@@ -43,7 +43,6 @@ const IndexBody = styled.div`
 
   @media (min-width: 775px) {
     grid-column: 3;
-    grid-row: 3;
   }
 `;
 
