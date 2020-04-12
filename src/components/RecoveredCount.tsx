@@ -47,7 +47,7 @@ export const RecoveredCount: React.FC = props => {
         "Loading data"
       ) : status === "success" ? (
         <div>
-          As of {new Date(dataDate).getDate()}, there are{" "}
+          As of {new Date(dataDate).toLocaleDateString()}, there are{" "}
           {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
             Number(recovered)
           )}{" "}
