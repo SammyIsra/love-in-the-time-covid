@@ -4,11 +4,12 @@ import { graphql, PageProps } from "gatsby";
 import FeelGoodPostList, { FeelGoodPost } from "../components/FeelGoodPostList";
 import { IndexPageLayout } from "../components/layout/indexPage";
 
-const IndexPage: React.FC<PageProps<pageQueryData>> = (props) => {
+const IndexPage: React.FC<PageProps<pageQueryData>> = props => {
   // Extract the posts from the GraphQL data
-  const posts: FeelGoodPost[] = props.data.allFile.edges.map(
-    (edge) => edge.node.fields.post
-  );
+  const posts: FeelGoodPost[] = props.data.allFile.edges.map(edge => ({
+    ...edge.node.fields.post,
+    name: edge.node.name
+  }));
 
   return (
     <IndexPageLayout>
@@ -31,6 +32,7 @@ export const pageQuery = graphql`
               type
             }
           }
+          name
         }
       }
     }
@@ -44,6 +46,7 @@ type pageQueryData = {
         fields: {
           post: FeelGoodPost;
         };
+        name: string;
       };
     }[];
   };

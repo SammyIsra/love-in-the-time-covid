@@ -5,6 +5,7 @@ type BasePost = {
   title: string;
   summary: string;
   type: string;
+  name: string;
 };
 
 type TextPost = BasePost & {
@@ -27,13 +28,13 @@ export type FeelGoodPost = TextPost | ArticlePost | TweetPost | ImagePost;
 
 const FeelGoodPostList: React.FC<{
   posts: FeelGoodPost[];
-}> = (props) => {
+}> = props => {
   console.log(props);
   return (
     <VerticalSnapContainer>
       <SnapItem>Welcome to {"<Insert title here>"}</SnapItem>
-      {props.posts.map((post) => (
-        <SnapItem>{post.title}</SnapItem>
+      {props.posts.map(post => (
+        <SnapItem key={post.name}>{post.title}</SnapItem>
       ))}
       <SnapItem>
         That is all for today! Come back tomorrow for more good vibes 💛

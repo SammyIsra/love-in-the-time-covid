@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-netlify-cms",
+  "name": "covibes",
   "description": "Example Gatsby, and Netlify CMS project",
   "version": "1.1.3",
-  "author": "Austin Green",
+  "author": "Sammy Israwi",
   "dependencies": {
     "@types/styled-components": "^5.0.1",
     "babel-plugin-styled-components": "^1.10.7",
@@ -48,7 +48,8 @@
     "build": "npm run clean && gatsby build",
     "develop": "npm run clean && gatsby develop",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run develop"
   },
   "devDependencies": {
     "prettier": "^1.15.3"
