@@ -22,7 +22,10 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query MyQuery {
-    allFile(filter: { sourceInstanceName: { eq: "posts" } }) {
+    allFile(
+      filter: { sourceInstanceName: { eq: "posts" } }
+      sort: { fields: birthTime, order: DESC }
+    ) {
       edges {
         node {
           fields {
