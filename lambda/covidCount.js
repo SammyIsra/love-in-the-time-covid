@@ -4,17 +4,17 @@ const fetch = require("node-fetch");
 module.exports.handler = function(event, context) {
   console.log("queryStringParameters", event.queryStringParameters);
   return fetch("https://covidapi.info/api/v1/global", {
-    headers: { Accept: "application/json" },
+    headers: { Accept: "application/json" }
   })
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
       console.log("Response from API:", data);
       return {
         statusCode: 200,
         body: JSON.stringify({
-          date: data.date,
-          recovered: data.result.recovered,
-        }),
+          date: new Date(data.date).toISOString(),
+          recovered: data.result.recovered
+        })
       };
     });
 };
