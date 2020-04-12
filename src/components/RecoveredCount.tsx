@@ -18,9 +18,9 @@ export const RecoveredCount: React.FC = props => {
 
     // Check if cache exists, and if it is older than 5 hours.
     if (
-      cacheDate &&
-      !Number.isNaN(Number(recovered)) &&
-      new Date().valueOf() - new Date(cacheDate).valueOf() > MaxCacheAge
+      !cacheDate ||
+      new Date().valueOf() - new Date(cacheDate).valueOf() > MaxCacheAge ||
+      Number.isNaN(Number(recovered))
     ) {
       // If cache is older than 5 hours, fetch new data.
       fetch(".netlify/functions/covidCount")
