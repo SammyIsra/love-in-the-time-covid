@@ -26,14 +26,13 @@ export const RecoveredCount: React.FC = props => {
       fetch(".netlify/functions/covidCount")
         .then(response => response.json())
         .then(data => {
-          console.log("Received Data:", data);
           setRecovered(String(data.recovered));
           setDataDate(new Date(data.date).toUTCString());
           setCacheDate(new Date().toUTCString());
           setStatus("success");
         })
         .catch(err => {
-          console.log("Error:", err);
+          console.error("Error:", err);
           setStatus("failed");
         });
     } else {

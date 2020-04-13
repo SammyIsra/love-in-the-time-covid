@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { graphql, PageProps } from "gatsby";
 
 import FeelGoodPostList, { FeelGoodPost } from "../components/FeelGoodPostList";
 import { IndexPageLayout } from "../components/layout/indexPage";
+import { FlowingBackground } from "../components/FlowingBackground";
 
 const IndexPage: React.FC<PageProps<pageQueryData>> = props => {
   // Extract the posts from the GraphQL data
@@ -10,11 +11,22 @@ const IndexPage: React.FC<PageProps<pageQueryData>> = props => {
     ...edge.node.fields.post,
     name: edge.node.name
   }));
+  // TODO: Enable this once every post has a "public" field
+  // .filter(post => post.public);
+
+  const [currentPostNumber, setCurrentPostNumber] = useState(0);
+
+  const scrollHandler = React.useCallback(
+    postNumber => setCurrentPostNumber(postNumber),
+    [posts.length]
+  );
 
   return (
-    <IndexPageLayout>
-      <FeelGoodPostList posts={posts} />
-    </IndexPageLayout>
+    <FlowingBackground count={currentPostNumber}>
+      <IndexPageLayout>
+        <FeelGoodPostList posts={posts} scrollPostHandler={scrollHandler} />
+      </IndexPageLayout>
+    </FlowingBackground>
   );
 };
 
@@ -33,6 +45,9 @@ export const pageQuery = graphql`
               summary
               title
               type
+              url
+              public
+              source
             }
           }
           name

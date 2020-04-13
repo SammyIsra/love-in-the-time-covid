@@ -68,3 +68,12 @@ const LayoutBody = styled.div`
   grid-template-rows: 10rem 1fr 3fr 2fr 10rem;
   grid-template-columns: 10rem 1fr 5fr 1fr 10rem;
 `;
+
+export const SpecialSnapItem = styled(SnapItem)``;
+
+export const FlexCenter = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+`;
