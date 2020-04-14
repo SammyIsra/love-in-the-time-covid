@@ -55,6 +55,7 @@ const FeelGoodImage: React.FC<{ post: ImagePost }> = props => {
 
 const Img = styled.img`
   max-height: 75%;
+  max-width: 100%;
 `;
 
 const ConditionalSource: React.FC<{ source: string }> = ({ source }) => {
