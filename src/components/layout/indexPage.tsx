@@ -4,7 +4,7 @@ import { RecoveredCount } from "../RecoveredCount";
 import { VisitorCount } from "../VisitorCount";
 import { Helmet } from "react-helmet";
 
-import LogoNegative from "../../img/logo_negative.svg";
+import LogoPositive from "../../img/logo_positive.svg";
 
 export const IndexPageLayout: React.FC = function(props) {
   return (
@@ -16,17 +16,17 @@ export const IndexPageLayout: React.FC = function(props) {
           rel="stylesheet"
         ></link>
       </Helmet>
-      <div style={{ gridRow: 1, gridColumn: 1 }}>
-        <img src={LogoNegative} alt="Heart in a char buttle" width="100%" />
-      </div>
-      <div style={{ gridRow: 1, gridColumn: 5 }}>About</div>
+      <PaddedCorner style={{ gridRow: 1, gridColumn: 1 }}>
+        <img src={LogoPositive} alt="Heart in a chat bubble" width="100%" />
+      </PaddedCorner>
+      <PaddedCorner style={{ gridRow: 1, gridColumn: 5 }}>About</PaddedCorner>
       <IndexBody>{props.children}</IndexBody>
-      <div style={{ gridRow: 5, gridColumn: 1 }}>
+      <PaddedCorner style={{ gridRow: 5, gridColumn: "1 / 3" }}>
         <RecoveredCount />
-      </div>
-      <div style={{ gridRow: 5, gridColumn: 5 }}>
+      </PaddedCorner>
+      <PaddedCorner style={{ gridRow: 5, gridColumn: 5 }}>
         <VisitorCount />
-      </div>
+      </PaddedCorner>
     </LayoutBody>
   );
 };
@@ -82,4 +82,8 @@ export const FlexCenter = styled.div`
   height: 100%;
   max-height: 100%;
   align-items: center;
+`;
+
+const PaddedCorner = styled.div`
+  padding: 2rem;
 `;
