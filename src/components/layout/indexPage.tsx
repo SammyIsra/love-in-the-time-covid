@@ -105,6 +105,7 @@ export const VerticalSnapContainer = styled.div`
 export const SnapItem = styled.div`
   height: 100%;
   scroll-snap-align: center;
+  scroll-snap-stop: always;
 `;
 
 const LayoutBody = styled.div`
