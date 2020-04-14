@@ -81,4 +81,5 @@ export const FlexCenter = styled.div`
   justify-content: center;
   height: 100%;
   max-height: 100%;
+  align-items: center;
 `;
