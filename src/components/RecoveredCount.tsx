@@ -50,7 +50,7 @@ export const RecoveredCount: React.FC = props => {
           {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
             Number(recovered)
           )}{" "}
-          cases!
+          recovered cases!
         </div>
       ) : status === "failed" ? (
         "Sorry, something went wrong"
