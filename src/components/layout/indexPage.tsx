@@ -50,6 +50,10 @@ export const VerticalSnapContainer = styled.div`
   height: 100%;
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 0 !important;
+  }
 `;
 
 export const SnapItem = styled.div`
@@ -76,4 +80,5 @@ export const FlexCenter = styled.div`
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  max-height: 100%;
 `;
