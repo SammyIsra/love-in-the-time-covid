@@ -6,6 +6,7 @@ import {
   FlexCenter
 } from "./layout/indexPage";
 import { FeelGoodPostItem } from "./PostItem";
+import { graphql, useStaticQuery } from "gatsby";
 
 type BasePost = {
   title: string;
@@ -42,6 +43,22 @@ const FeelGoodPostList: React.FC<{
   posts: FeelGoodPost[];
   scrollPostHandler: (scrollNumber: number) => void;
 }> = props => {
+  // Just used to get the title of the page
+  const metadata = useStaticQuery<{
+    site: {
+      siteMetadata: { title: string };
+    };
+  }>(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `).site.siteMetadata;
+
+  console.log(metadata);
   // Keep track of the previous visible post
   const [currentPost, setCurrentPost] = React.useState(0);
 
@@ -72,7 +89,9 @@ const FeelGoodPostList: React.FC<{
       }
     >
       <SpecialSnapItem>
-        <FlexCenter>Welcome to {"<Insert title here>"}</FlexCenter>
+        <FlexCenter>
+          <h1>Welcome to {metadata.title}💛</h1>
+        </FlexCenter>
       </SpecialSnapItem>
       {props.posts.map(post => (
         <SnapItem key={post.name}>
@@ -81,7 +100,9 @@ const FeelGoodPostList: React.FC<{
       ))}
       <SpecialSnapItem>
         <FlexCenter>
-          That is all for today! Come back tomorrow for more good vibes 💛
+          <h1>
+            That is all for today! Come back tomorrow for more good vibes 💛
+          </h1>
         </FlexCenter>
       </SpecialSnapItem>
     </VerticalSnapContainer>

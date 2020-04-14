@@ -5,26 +5,72 @@ import { VisitorCount } from "../VisitorCount";
 import { Helmet } from "react-helmet";
 
 import LogoPositive from "../../img/logo_positive.svg";
+import { useStaticQuery, graphql } from "gatsby";
 
 export const IndexPageLayout: React.FC = function(props) {
+  // Just used to get the title of the page
+  const metadata = useStaticQuery<{
+    site: {
+      siteMetadata: {
+        title: string;
+        image: string;
+        description: string;
+      };
+    };
+  }>(graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+          image
+          description
+        }
+      }
+    }
+  `).site.siteMetadata;
+
   return (
     <LayoutBody>
       <Helmet>
-        <title>CoVibes</title>
+        <title>{metadata.title}</title>
         <link
           href="https://fonts.googleapis.com/css?family=Work+Sans&display=swap"
           rel="stylesheet"
         ></link>
+        <link rel="shortcut icon" href={metadata.image} type="image/x-icon" />
+        <meta name="description" content={metadata.description}></meta>
       </Helmet>
-      <PaddedCorner style={{ gridRow: 1, gridColumn: 1 }}>
+      <PaddedCorner
+        style={{
+          gridRow: 1,
+          gridColumn: 1
+        }}
+      >
         <img src={LogoPositive} alt="Heart in a chat bubble" width="100%" />
       </PaddedCorner>
-      <PaddedCorner style={{ gridRow: 1, gridColumn: 5 }}>About</PaddedCorner>
+      <PaddedCorner
+        style={{
+          gridRow: 1,
+          gridColumn: 5
+        }}
+      >
+        About
+      </PaddedCorner>
       <IndexBody>{props.children}</IndexBody>
-      <PaddedCorner style={{ gridRow: 5, gridColumn: "1 / 3" }}>
+      <PaddedCorner
+        style={{
+          gridRow: 5,
+          gridColumn: "1 / 3"
+        }}
+      >
         <RecoveredCount />
       </PaddedCorner>
-      <PaddedCorner style={{ gridRow: 5, gridColumn: 5 }}>
+      <PaddedCorner
+        style={{
+          gridRow: 5,
+          gridColumn: 5
+        }}
+      >
         <VisitorCount />
       </PaddedCorner>
     </LayoutBody>
@@ -82,6 +128,11 @@ export const FlexCenter = styled.div`
   height: 100%;
   max-height: 100%;
   align-items: center;
+  text-align: center;
+
+  > p {
+    margin-block-start: 0rem;
+  }
 `;
 
 const PaddedCorner = styled.div`

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: "CoVibes",
-    image: "/img/logo_positive.svg",
-    description: "Good vibes in pandemic times"
+    image: "/img/favicon-logo.png",
+    description: "Good vibes for difficult times"
   },
   plugins: [
     "gatsby-plugin-styled-components",
