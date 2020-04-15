@@ -1,6 +1,8 @@
 {
   "templateKey": "blog-post",
   "type": "text",
-  "title": "Pat Nagle once told me...",
-  "summary": "...that you're the cutest fish in the pond"
+  "title": "Assuming you did...",
+  "summary": "Keep scrolling for some funny images, good news, and just a short break in your day!",
+  "source": "test3",
+  "public": true
 }
