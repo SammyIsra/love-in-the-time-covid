@@ -21,6 +21,10 @@ export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
   }
 };
 
+/**
+ * Used when the type of post is a Text
+ * @param props
+ */
 const FeelGoodText: React.FC<{ post: TextPost }> = props => {
   return (
     <FlexCenter id={props.post.name}>
@@ -31,18 +35,29 @@ const FeelGoodText: React.FC<{ post: TextPost }> = props => {
   );
 };
 
+/**
+ * Used when the type of post is an Article.
+ * We hope that the "source" is present but we cannot make sure.
+ * @param props
+ */
 const FeelGoodArticle: React.FC<{ post: ArticlePost }> = props => {
   return (
     <FlexCenter id={props.post.name}>
-      <h2>
-        <a href={props.post.url}>{props.post.title}</a>
-      </h2>
+      <h2>{props.post.title}</h2>
       <p>{props.post.summary}</p>
-      <ConditionalSource source={props.post.source} />
+      <p>
+        <a href={props.post.url} target="_blank">
+          -{props.post.source || "Read more here"}
+        </a>
+      </p>
     </FlexCenter>
   );
 };
 
+/**
+ * Used when the type of Post is an Image.
+ * @param props
+ */
 const FeelGoodImage: React.FC<{ post: ImagePost }> = props => {
   return (
     <FlexCenter id={props.post.name}>
