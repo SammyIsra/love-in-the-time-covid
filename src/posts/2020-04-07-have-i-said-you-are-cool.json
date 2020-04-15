@@ -1,6 +1,8 @@
 {
   "templateKey": "blog-post",
   "type": "text",
-  "title": "A cool bird told me something",
-  "summary": "That you're cool"
+  "title": "Did you do it? ",
+  "summary": "Did you take some deep breaths? ",
+  "source": "test2",
+  "public": true
 }
