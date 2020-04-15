@@ -40,7 +40,7 @@ collections:
           - { label: "Image", value: "image" }
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Summary", name: "summary", widget: "string" }
-      - { label: "Source", name: "source", widget: "string", required: true }
+      - { label: "Source", name: "source", widget: "string", required: false }
       - { label: "Public", name: "public", widget: "boolean", default: false }
       - {
           label: "URL (should be required if Image or Link)",
@@ -83,7 +83,7 @@ collections:
           widget: "string",
           comment: "Depending on the type of post, this can be a link, or just text",
         }
-      - { label: "Source", name: "source", widget: "string", required: true }
+      - { label: "Source", name: "source", widget: "string", required: false }
       - { label: "Public", name: "public", widget: "boolean", default: false }
       - {
           label: "URL (should be required if Image or Link)",
@@ -159,7 +159,7 @@ collections:
           - { label: "Image", value: "image" }
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Summary", name: "summary", widget: "string" }
-      - { label: "Source", name: "source", widget: "string", required: true }
+      - { label: "Source", name: "source", widget: "string", required: false }
       - { label: "Public", name: "public", widget: "boolean", default: false }
       - {
           label: "URL (should be required if Image or Link)",
@@ -197,7 +197,7 @@ collections:
           - { label: "Image", value: "image" }
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Summary", name: "summary", widget: "string" }
-      - { label: "Source", name: "source", widget: "string", required: true }
+      - { label: "Source", name: "source", widget: "string", required: false }
       - { label: "Public", name: "public", widget: "boolean", default: false }
       - {
           label: "URL (should be required if Image or Link)",
