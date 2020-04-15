@@ -1,6 +1,8 @@
 {
   "templateKey": "blog-post",
   "type": "text",
-  "title": "You are a cool bean",
-  "summary": "You are a cool bean burrito"
+  "title": "First and foremost...",
+  "summary": "Close your eyes, and take three deeeeeep breaths. ",
+  "public": true,
+  "source": "test?"
 }
