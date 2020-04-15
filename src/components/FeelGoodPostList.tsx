@@ -90,12 +90,14 @@ const FeelGoodPostList: React.FC<{
     >
       <SpecialSnapItem>
         <FlexCenter>
-          <h1>Welcome to {metadata.title}💛</h1>
-          <h3>We're glad you're here.</h3> 
-          <h5>
-            Times are tough right now and it's easy to be overwhelmed. However, amidst the bad, there is still <b>good.</b>
-            Scroll through the below stack of stories for a quick and uplifting mindfulness break. 
-          </h5>
+          <h1>Hi, we're glad you're here. 💛</h1>
+          <h2>
+            Times are tough right now and it's easy to be overwhelmed. <br />
+            However, amidst the bad, there is still good.
+            <br />
+            Scroll through the below stack of stories for a quick and uplifting
+            mindfulness break.
+          </h2>
         </FlexCenter>
       </SpecialSnapItem>
       {props.posts.map(post => (
@@ -105,13 +107,15 @@ const FeelGoodPostList: React.FC<{
       ))}
       <SpecialSnapItem>
         <FlexCenter>
-          <h1>
-            That's all for now! 💛
-          </h1>
-          <h5> 
-              We'll be continuously updating these stories, so check back soon for fresh content and
-              to see those recovery counters go up. Have a great day, and don't forget, we will get through this together. 
-          </h5>
+          <h1>Come again soon! 💛</h1>
+          <h2>
+            That's all for now, though we'll be working to continuously update
+            these stories. <br />
+            Check back soon for fresh content and to see those recovery counters
+            go up. <br />
+            Have a great day, and don't forget, we will get through this
+            together.
+          </h2>
         </FlexCenter>
       </SpecialSnapItem>
     </VerticalSnapContainer>
