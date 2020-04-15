@@ -1,6 +1,9 @@
 {
   "templateKey": "blog-post",
-  "type": "text",
-  "title": "Here is one of Helen's tests.",
-  "summary": "A test one like i said. "
+  "type": "article",
+  "title": "Feeling lonely? Call in for some uplifting messages!",
+  "summary": "A few Canadian high-schoolers created a free hotline as a means of comforting quarantined seniors across North America. You don't have to be a senior to call in though! Just dial 1-877-JOY-4ALL to hear their list of reguarly updated stories, jokes, and uplifting news!",
+  "source": "Check them out here!",
+  "public": true,
+  "url": "https://www.joy4all.ca/"
 }
