@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-type GetOptimizedGradientsResult = {
+export type GetOptimizedGradientsResult = {
   allFile: {
     edges: {
       node: {
@@ -13,7 +13,7 @@ type GetOptimizedGradientsResult = {
   };
 };
 
-type ImageFormat = {
+export type ImageFormat = {
   base64: string;
   src: string;
 };
@@ -67,6 +67,8 @@ export const FlowingBackground: React.FC<{
   );
 };
 
-function extractBackgrounds(query: GetOptimizedGradientsResult): ImageFormat[] {
+export function extractBackgrounds(
+  query: GetOptimizedGradientsResult
+): ImageFormat[] {
   return query.allFile.edges.map(edge => edge.node.childImageSharp.fixed);
 }

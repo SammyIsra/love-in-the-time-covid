@@ -12,7 +12,6 @@ const IndexPage: React.FC<PageProps<pageQueryData>> = props => {
       ...edge.node.fields.post,
       name: edge.node.name
     }))
-    // TODO: Enable this once every post has a "public" field
     .filter(post => post.public);
 
   const [currentPostNumber, setCurrentPostNumber] = useState(0);
@@ -24,7 +23,7 @@ const IndexPage: React.FC<PageProps<pageQueryData>> = props => {
 
   return (
     <FlowingBackground count={currentPostNumber}>
-      <IndexPageLayout>
+      <IndexPageLayout currentPage="home">
         <FeelGoodPostList posts={posts} scrollPostHandler={scrollHandler} />
       </IndexPageLayout>
     </FlowingBackground>

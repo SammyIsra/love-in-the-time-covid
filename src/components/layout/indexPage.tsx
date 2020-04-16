@@ -5,9 +5,11 @@ import { VisitorCount } from "../VisitorCount";
 import { Helmet } from "react-helmet";
 
 import LogoPositive from "../../img/logo_positive.svg";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
-export const IndexPageLayout: React.FC = function(props) {
+export const IndexPageLayout: React.FC<{
+  currentPage: "about" | "home";
+}> = function(props) {
   // Just used to get the title of the page
   const metadata = useStaticQuery<{
     site: {
@@ -54,7 +56,11 @@ export const IndexPageLayout: React.FC = function(props) {
           gridColumn: 5
         }}
       >
-        About
+        {props.currentPage === "home" ? (
+          <Link to="/about">About</Link>
+        ) : (
+          <Link to="/">Home</Link>
+        )}
       </PaddedCorner>
       <IndexBody>{props.children}</IndexBody>
       <PaddedCorner
