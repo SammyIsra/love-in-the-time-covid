@@ -37,6 +37,7 @@ export const pageQuery = graphql`
     allFile(
       filter: { sourceInstanceName: { eq: "posts" } }
       sort: { fields: birthTime, order: DESC }
+      limit: 15
     ) {
       edges {
         node {
