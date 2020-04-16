@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { RecoveredCount } from "../RecoveredCount";
-import { VisitorCount } from "../VisitorCount";
 import { Helmet } from "react-helmet";
 
 import LogoPositive from "../../img/logo_positive.svg";
@@ -45,30 +44,17 @@ export const IndexPageLayout: React.FC<{
       <LogoCorner>
         <img src={LogoPositive} alt="Heart in a chat bubble" width="100%" />
       </LogoCorner>
-      <PaddedCorner
-        style={{
-          gridRow: 1,
-          gridColumn: 5
-        }}
-      >
+      <NavCorner>
         {props.currentPage === "home" ? (
           <Link to="/about">About</Link>
         ) : (
           <Link to="/">Home</Link>
         )}
-      </PaddedCorner>
+      </NavCorner>
       <IndexBody>{props.children}</IndexBody>
       <RecoveredCorner>
         <RecoveredCount />
       </RecoveredCorner>
-      <PaddedCorner
-        style={{
-          gridRow: 5,
-          gridColumn: 5
-        }}
-      >
-        <VisitorCount />
-      </PaddedCorner>
     </LayoutBody>
   );
 };
@@ -135,24 +121,41 @@ export const FlexCenter = styled.div`
 `;
 
 const PaddedCorner = styled.div`
-  padding: 2rem;
+  padding: 1.75rem;
+
+  @media (min-width: 575px) {
+    padding: 2rem;
+  }
 `;
 
 const LogoCorner = styled(PaddedCorner)`
   grid-row: 1;
   grid-column: 1;
-  max-width: 4rem;
+  max-width: 200px;
 
   @media (min-width: 450px) {
-    max-width: 100%;
+    max-width: 200px;
   }
 `;
 
 const RecoveredCorner = styled(PaddedCorner)`
   grid-row: 5;
-  grid-column: 1 / 4;
+  grid-column: 1 / 6;
 
   @media (min-width: 575px) {
     grid-column: 1 / 3;
+  }
+`;
+
+const NavCorner = styled(PaddedCorner)`
+  grid-row: 1;
+  grid-column: 5;
+
+  > a {
+    text-decoration: none;
+
+    &:hover {
+      opacity: 0.7;
+    }
   }
 `;
