@@ -47,7 +47,7 @@ const FeelGoodArticle: React.FC<{ post: ArticlePost }> = props => {
       <p>{props.post.summary}</p>
       <p>
         <a href={props.post.url} target="_blank">
-          -{props.post.source || "Read more here"}
+          More here
         </a>
       </p>
     </FlexCenter>
