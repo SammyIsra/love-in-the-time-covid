@@ -7,12 +7,13 @@ import { FlowingBackground } from "../components/FlowingBackground";
 
 const IndexPage: React.FC<PageProps<pageQueryData>> = props => {
   // Extract the posts from the GraphQL data
-  const posts: FeelGoodPost[] = props.data.allFile.edges.map(edge => ({
-    ...edge.node.fields.post,
-    name: edge.node.name
-  }));
-  // TODO: Enable this once every post has a "public" field
-  // .filter(post => post.public);
+  const posts: FeelGoodPost[] = props.data.allFile.edges
+    .map(edge => ({
+      ...edge.node.fields.post,
+      name: edge.node.name
+    }))
+    // TODO: Enable this once every post has a "public" field
+    .filter(post => post.public);
 
   const [currentPostNumber, setCurrentPostNumber] = useState(0);
 
