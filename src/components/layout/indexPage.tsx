@@ -74,7 +74,7 @@ export const IndexPageLayout: React.FC<{
 };
 
 const IndexBody = styled.div`
-  width: 100%;
+  width: auto;
   height: 100%;
   grid-column: 1 / 6;
   grid-row: 2/5;
