@@ -58,14 +58,9 @@ export const IndexPageLayout: React.FC<{
         )}
       </PaddedCorner>
       <IndexBody>{props.children}</IndexBody>
-      <PaddedCorner
-        style={{
-          gridRow: 5,
-          gridColumn: "1 / 3"
-        }}
-      >
+      <RecoveredCorner>
         <RecoveredCount />
-      </PaddedCorner>
+      </RecoveredCorner>
       <PaddedCorner
         style={{
           gridRow: 5,
@@ -83,8 +78,10 @@ const IndexBody = styled.div`
   height: 100%;
   grid-column: 1 / 6;
   grid-row: 2/5;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 
-  @media (min-width: 550px) {
+  @media (min-width: 650px) {
     grid-column: 2 / 5;
   }
 
@@ -117,8 +114,8 @@ const LayoutBody = styled.div`
   left: 0;
   top: 0;
   display: grid;
-  grid-template-rows: 10rem 1fr 3fr 2fr 10rem;
-  grid-template-columns: 10rem 1fr 5fr 1fr 10rem;
+  grid-template-rows: minmax(5rem, 10rem) 1fr 3fr 2fr minmax(5rem, 10rem);
+  grid-template-columns: minmax(5rem, 10rem) 1fr 5fr 1fr minmax(5rem, 10rem);
 `;
 
 export const SpecialSnapItem = styled(SnapItem)``;
@@ -148,5 +145,14 @@ const LogoCorner = styled(PaddedCorner)`
 
   @media (min-width: 450px) {
     max-width: 100%;
+  }
+`;
+
+const RecoveredCorner = styled(PaddedCorner)`
+  grid-row: 5;
+  grid-column: 1 / 4;
+
+  @media (min-width: 575px) {
+    grid-column: 1 / 3;
   }
 `;
