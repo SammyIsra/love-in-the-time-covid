@@ -1,9 +1,9 @@
 {
   "templateKey": "blog-post",
-  "type": "text",
+  "type": "image",
   "public": true,
-  "title": "This is a very (not really) long post to test how it looks",
-  "summary": "You probably haven't heard of them pour-over poutine, brunch mixtape plaid church-key.\n Vice authentic cred, gastropub sriracha snackwave fanny pack knausgaard fashion axe. Stumptown four dollar toast vexillologist",
-  "source": "Hipster Ipsum",
-  "url": "https://hipsum.co/?paras=5&type=hipster-centric"
+  "title": "It's not just humans that are struggling...",
+  "summary": "🐶🐱",
+  "source": "",
+  "url": "https://static.boredpanda.com/blog/wp-content/uploads/2020/03/1239587988507488256-1-png__700.jpg"
 }
