@@ -1,8 +1,9 @@
 {
   "templateKey": "blog-post",
-  "type": "text",
-  "title": "Assuming you did...",
-  "summary": "Keep scrolling for some funny images, good news, and just a short break in your day!",
-  "source": "test3",
-  "public": true
+  "type": "article",
+  "title": "Recovery is possible. Covid can be beaten. There is hope. 🤞",
+  "summary": "Solomon McFarlane, 84, spent two weeks in the hospital with the virus after testing positive for Covid-19 and getting pneumonia as a result. He's now back home in Manchester with his wife and son.",
+  "source": "Click here to see NHS medical staff applauding his recovery!",
+  "public": true,
+  "url": "https://twitter.com/EmpressSapph/status/1247221626774708224"
 }
