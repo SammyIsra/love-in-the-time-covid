@@ -145,10 +145,10 @@ const PaddedCorner = styled.div`
 const LogoCorner = styled(PaddedCorner)`
   grid-row: 1;
   grid-column: 1;
-  max-width: 200px;
+  max-width: 120px;
 
   @media (min-width: 450px) {
-    max-width: 200px;
+    max-width: 120px;
   }
 `;
 
@@ -166,7 +166,9 @@ const NavCorner = styled(PaddedCorner)`
   grid-column: 5;
 
   > a {
-    text-decoration: none;
+    text-decoration: underline;
+    font-size: 1.2rem; 
+    color: #222222;
 
     &:hover {
       opacity: 0.7;
