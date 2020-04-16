@@ -94,7 +94,7 @@ const FeelGoodPostList: React.FC<{
           <h2>
             Times are tough right now and it's easy to be overwhelmed. <br />
             However, amidst the bad, there is still good.
-            <br />
+            <br /><br />
             Scroll through the below stack of stories for a quick and uplifting
             mindfulness break.
           </h2>
@@ -111,8 +111,7 @@ const FeelGoodPostList: React.FC<{
           <h2>
             That's all for now, though we'll be working to continuously update
             these stories. <br />
-            Check back soon for fresh content and to see those recovery counters
-            go up. <br />
+            Check back soon for fresh content! <br /><br />
             Have a great day, and don't forget, we will get through this
             together.
           </h2>
