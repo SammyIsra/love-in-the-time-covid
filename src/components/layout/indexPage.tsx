@@ -66,6 +66,8 @@ const IndexBody = styled.div`
   grid-row: 2/5;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (min-width: 650px) {
     grid-column: 2 / 5;
@@ -84,6 +86,7 @@ const IndexBody = styled.div`
     }
     padding-left: 3rem;
     padding-right: 3rem;
+    max-width: 650px;
   }
 `;
 
