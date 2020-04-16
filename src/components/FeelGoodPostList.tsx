@@ -92,8 +92,7 @@ const FeelGoodPostList: React.FC<{
         <FlexCenter>
           <h1>Hi, we're glad you're here. 💛</h1>
           <h2>
-            Times are tough right now and it's easy to be overwhelmed. <br />
-            However, amidst the bad, there is still good.
+            Times are tough right now and it's easy to be overwhelmed. However, amidst the bad, there is still good.
             <br /><br />
             Scroll through the below stack of stories for a quick and uplifting
             mindfulness break.
@@ -110,8 +109,7 @@ const FeelGoodPostList: React.FC<{
           <h1>Come again soon! 💛</h1>
           <h2>
             That's all for now, though we'll be working to continuously update
-            these stories. <br />
-            Check back soon for fresh content! <br /><br />
+            these stories. Check back soon for fresh content! 🍆 <br /><br />
             Have a great day, and don't forget, we will get through this
             together.
           </h2>
