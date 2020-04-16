@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocalStorageState } from "../utils/usePersistentStorage";
+import styled from "styled-components";
 
 type RequestStatus = "notStarted" | "loading" | "success" | "failed";
 
@@ -48,9 +49,11 @@ export const RecoveredCount: React.FC = props => {
         <div>
           Recovered cases:
           <br />
-          {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
-            Number(recovered)
-          )}
+          <RecoveredNum>
+            {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
+              Number(recovered)
+            )}
+          </RecoveredNum>
         </div>
       ) : status === "failed" ? (
         "Sorry, something went wrong"
@@ -60,3 +63,7 @@ export const RecoveredCount: React.FC = props => {
     </div>
   );
 };
+
+const RecoveredNum = styled.span`
+  font-size: 1.2rem;
+`;
