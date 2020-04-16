@@ -145,11 +145,7 @@ const PaddedCorner = styled.div`
 const LogoCorner = styled(PaddedCorner)`
   grid-row: 1;
   grid-column: 1;
-  max-width: 120px;
-
-  @media (min-width: 450px) {
-    max-width: 120px;
-  }
+  max-width: 60px;
 `;
 
 const RecoveredCorner = styled(PaddedCorner)`
@@ -167,7 +163,7 @@ const NavCorner = styled(PaddedCorner)`
 
   > a {
     text-decoration: underline;
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     color: #222222;
 
     &:hover {
