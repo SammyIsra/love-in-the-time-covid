@@ -1,6 +1,7 @@
 {
   "templateKey": "blog-post",
   "type": "text",
-  "title": "Here's yet another test. ",
-  "summary": "Unfortunately we can't schedule a post... "
+  "title": "Take a break away from social media if you start feeling overwhelmed. ",
+  "summary": "It's super easy to be bombarded with stressful images and news reports these days. Finish scanning through this deck and take a quick break if you have the opportunity to. There's always hope if you just look out for it. 🧀 Cheesy but true.",
+  "public": true
 }
