@@ -1,8 +1,9 @@
 {
   "templateKey": "blog-post",
-  "type": "text",
-  "title": "Did you do it? ",
-  "summary": "Did you take some deep breaths? ",
-  "source": "test2",
-  "public": true
+  "type": "article",
+  "title": "Donations are continuing to pour in to help those in need. 🤑 $1 billion USD donated recently by Twitter's CEO, the largest sum from a single person so far.",
+  "summary": "And he joins a bunch of other tech billionaires and celebrities. Dell has contributed $100 million, Jeff Bezos, Bill and Melinda Gates Foundation, and plenty more. It's nice to see folks coming together to support each other whatever way they can right now.",
+  "source": "Click here to read more about it! ",
+  "public": true,
+  "url": "https://www.theguardian.com/world/2020/apr/10/coronavirus-good-news-upside-blessings-covid-positive"
 }
