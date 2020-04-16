@@ -42,7 +42,7 @@ export const IndexPageLayout: React.FC<{
         <meta name="description" content={metadata.description}></meta>
       </Helmet>
       <LogoCorner>
-        <img src={LogoPositive} alt="Heart in a chat bubble" width="100%" />
+        {/* <img src={LogoPositive} alt="Heart in a chat bubble" width="100%" /> */}
       </LogoCorner>
       <NavCorner>
         {props.currentPage === "home" ? (
