@@ -1,9 +1,9 @@
 {
   "templateKey": "blog-post",
-  "type": "article",
+  "type": "image",
   "public": false,
-  "title": "This is a test post with test link",
-  "summary": "I am 100% a test",
-  "source": "The World Health Organization (WHO)",
-  "url": "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public"
+  "title": "DIY masks for those of us with no sewing skills...",
+  "summary": "😂",
+  "source": "",
+  "url": "https://i.imgur.com/6qG9z5b.jpg"
 }
