@@ -1,6 +1,7 @@
 {
   "templateKey": "blog-post",
-  "type": "article",
-  "title": "Here is an online article, how does it link to anything? :S ",
-  "summary": "The summary doesn't show anything. "
+  "type": "text",
+  "title": "Straighten your shoulders just a little bit.",
+  "summary": "Take a quick neck stretch to release some of that tension. 🤗",
+  "public": true
 }
