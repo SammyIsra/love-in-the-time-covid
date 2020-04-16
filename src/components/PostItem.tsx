@@ -45,11 +45,11 @@ const FeelGoodArticle: React.FC<{ post: ArticlePost }> = props => {
     <FlexCenter id={props.post.name}>
       <h2>{props.post.title}</h2>
       <p>{props.post.summary}</p>
-      <p>
+      <Source>
         <a href={props.post.url} target="_blank">
           More here
         </a>
-      </p>
+      </Source>
     </FlexCenter>
   );
 };
@@ -71,6 +71,13 @@ const FeelGoodImage: React.FC<{ post: ImagePost }> = props => {
 const Img = styled.img`
   max-height: 75%;
   max-width: 100%;
+`;
+
+const Source = styled.p`
+  > a {
+    font-style: italic;
+    font-size: 1.05rem;
+  }
 `;
 
 const ConditionalSource: React.FC<{ source: string }> = ({ source }) => {
