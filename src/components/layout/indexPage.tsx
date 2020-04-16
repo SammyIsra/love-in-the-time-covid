@@ -42,14 +42,9 @@ export const IndexPageLayout: React.FC<{
         <link rel="shortcut icon" href={metadata.image} type="image/x-icon" />
         <meta name="description" content={metadata.description}></meta>
       </Helmet>
-      <PaddedCorner
-        style={{
-          gridRow: 1,
-          gridColumn: 1
-        }}
-      >
+      <LogoCorner>
         <img src={LogoPositive} alt="Heart in a chat bubble" width="100%" />
-      </PaddedCorner>
+      </LogoCorner>
       <PaddedCorner
         style={{
           gridRow: 1,
@@ -144,4 +139,14 @@ export const FlexCenter = styled.div`
 
 const PaddedCorner = styled.div`
   padding: 2rem;
+`;
+
+const LogoCorner = styled(PaddedCorner)`
+  grid-row: 1;
+  grid-column: 1;
+  max-width: 4rem;
+
+  @media (min-width: 450px) {
+    max-width: 100%;
+  }
 `;
