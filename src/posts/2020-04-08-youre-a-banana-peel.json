@@ -1,9 +1,9 @@
 {
   "templateKey": "blog-post",
-  "type": "article",
-  "title": "Some Good News",
-  "summary": "For a Youtube test! ",
-  "source": "Jim from the Office ",
+  "type": "image",
+  "title": "A classic excuse",
+  "summary": "(except when it backfires)",
+  "source": "",
   "public": true,
-  "url": "https://www.youtube.com/watch?v=F5pgG1M_h_U"
+  "url": "https://i.imgur.com/Ya7ZKvz.jpg"
 }
