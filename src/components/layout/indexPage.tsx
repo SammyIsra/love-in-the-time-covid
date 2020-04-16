@@ -64,15 +64,26 @@ const IndexBody = styled.div`
   height: 100%;
   grid-column: 1 / 6;
   grid-row: 2/5;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 
   @media (min-width: 650px) {
     grid-column: 2 / 5;
   }
 
-  @media (min-width: 775px) {
+  @media (min-width: 800px) {
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1075px) {
     grid-column: 3;
+    p {
+      font-size: 1.35rem;
+    }
+    padding-left: 3rem;
+    padding-right: 3rem;
   }
 `;
 
@@ -112,11 +123,11 @@ export const FlexCenter = styled.div`
   justify-content: center;
   height: 100%;
   max-height: 100%;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
 
   > p {
     margin-block-start: 0rem;
+    margin-block-end: 0.5rem;
   }
 `;
 
