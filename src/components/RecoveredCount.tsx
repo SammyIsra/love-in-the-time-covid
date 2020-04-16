@@ -46,11 +46,11 @@ export const RecoveredCount: React.FC = props => {
         "Loading data"
       ) : status === "success" ? (
         <div>
-          As of right now, there are{" "}
+          Recovered cases:
+          <br />
           {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
             Number(recovered)
-          )}{" "}
-          recovered cases!
+          )}
         </div>
       ) : status === "failed" ? (
         "Sorry, something went wrong"
