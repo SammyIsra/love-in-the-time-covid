@@ -53,8 +53,9 @@ collections:
           name: "datetime",
           widget: "",
           required: true,
-          dateFormat: true,
-          timeFormat: true,
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
         }
       # - {
       #     label: "Body",
