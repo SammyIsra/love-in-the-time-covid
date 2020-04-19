@@ -36,7 +36,7 @@ export const pageQuery = graphql`
   query MyQuery {
     allFile(
       filter: { sourceInstanceName: { eq: "posts" } }
-      sort: { fields: birthTime, order: DESC }
+      sort: { fields: fields___post___publishDate, order: DESC }
     ) {
       edges {
         node {
@@ -48,6 +48,7 @@ export const pageQuery = graphql`
               url
               public
               source
+              publishDate
             }
           }
           name
