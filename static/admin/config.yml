@@ -48,6 +48,28 @@ collections:
           widget: "string",
           required: false,
         }
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          buttons:
+            [
+              "bold",
+              "italic",
+              "code",
+              "link",
+              "heading-one",
+              "heading-two",
+              "heading-three",
+              "heading-four",
+              "heading-five",
+              "heading-six",
+              "quote",
+              "bulleted-list",
+              "numbered-list",
+            ],
+          editorComponents: ["image"],
+        }
 
   - name: "texts"
     label: "Texts"
