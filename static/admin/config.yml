@@ -8,6 +8,8 @@ backend:
     uploadMedia: "[skip ci] Upload “{{path}}”"
     deleteMedia: "[skip ci] Delete “{{path}}”"
 
+  site_url: "https://www.covibes.app/"
+
 media_folder: static/img
 public_folder: /img
 
@@ -50,8 +52,8 @@ collections:
         }
       - {
           label: "Publish Date",
-          name: "datetime",
-          widget: "",
+          name: "publishDate",
+          widget: "datetime",
           required: true,
           dateFormat: "YYYY-MM-DD",
           timeFormat: "HH:mm",
