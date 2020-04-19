@@ -1,0 +1,8 @@
+{
+  "templateKey": "blog-post",
+  "type": "text",
+  "public": false,
+  "publishDate": "2020-04-18 19:19",
+  "title": "Test post with Date",
+  "summary": "Test post with Date (not public)"
+}
