@@ -1,0 +1,8 @@
+{
+  "templateKey": "blog-post",
+  "type": "text",
+  "public": false,
+  "body": "Some Stuff\n\nAdd **more** stuff?\n\nAdd *less* stuff!",
+  "title": "Test Markdown Post",
+  "summary": "This is a test post with Markdown and should not show up in page"
+}
