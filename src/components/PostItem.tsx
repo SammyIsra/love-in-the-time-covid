@@ -3,13 +3,15 @@ import {
   FeelGoodPost,
   TextPost,
   ArticlePost,
-  ImagePost
+  ImagePost,
+  PromptPost
 } from "./FeelGoodPostList";
 import { FlexCenter } from "./layout/indexPage";
 import styled from "styled-components";
 
 export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
   switch (props.post.type) {
+    case "prompt":
     case "text":
       return <FeelGoodText post={props.post} />;
     case "article":
@@ -23,9 +25,10 @@ export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
 
 /**
  * Used when the type of post is a Text
+ * The type of post can also be a Prompt, which is functionally identical to a Text one
  * @param props
  */
-const FeelGoodText: React.FC<{ post: TextPost }> = props => {
+const FeelGoodText: React.FC<{ post: TextPost | PromptPost }> = props => {
   return (
     <FlexCenter id={props.post.name}>
       <h2>{props.post.title}</h2>
@@ -37,7 +40,7 @@ const FeelGoodText: React.FC<{ post: TextPost }> = props => {
 
 /**
  * Used when the type of post is an Article.
- * We hope that the "source" is present but we cannot make sure.
+ * We hope that the "source" is present but we cannot be sure.
  * @param props
  */
 const FeelGoodArticle: React.FC<{ post: ArticlePost }> = props => {
