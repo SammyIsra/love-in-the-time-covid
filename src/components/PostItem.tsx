@@ -3,7 +3,8 @@ import {
   FeelGoodPost,
   TextPost,
   ArticlePost,
-  ImagePost
+  ImagePost,
+  PromptPost
 } from "./FeelGoodPostList";
 import { FlexCenter } from "./layout/indexPage";
 import styled from "styled-components";
@@ -26,7 +27,7 @@ export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
  * Used when the type of post is a Text
  * @param props
  */
-const FeelGoodText: React.FC<{ post: TextPost }> = props => {
+const FeelGoodText: React.FC<{ post: TextPost | PromptPost }> = props => {
   return (
     <FlexCenter id={props.post.name}>
       <h2>{props.post.title}</h2>
