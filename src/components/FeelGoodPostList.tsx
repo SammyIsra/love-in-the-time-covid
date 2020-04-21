@@ -23,6 +23,10 @@ export type TextPost = BasePost & {
   type: "text";
 };
 
+export type PromptPost = BasePost & {
+  type: "prompt";
+};
+
 export type ArticlePost = BasePost & {
   type: "article";
   url: string;
@@ -38,7 +42,14 @@ export type ImagePost = BasePost & {
   url: string;
 };
 
-export type FeelGoodPost = TextPost | ArticlePost | TweetPost | ImagePost;
+export type FeelGoodPost =
+  | TextPost
+  | ArticlePost
+  | TweetPost
+  | ImagePost
+  | PromptPost;
+
+const PromptFrequency = 4;
 
 const FeelGoodPostList: React.FC<{
   posts: FeelGoodPost[];
@@ -59,9 +70,53 @@ const FeelGoodPostList: React.FC<{
     }
   `).site.siteMetadata;
 
-  console.log(metadata);
   // Keep track of the previous visible post
   const [currentPost, setCurrentPost] = React.useState(0);
+
+  // List of posts interlaced with prompts
+  const [orderedPosts] = React.useState<FeelGoodPost[]>(() => {
+    // Filter prompts and every other type of post
+    let { prompts, notPrompts } = props.posts.reduce<{
+      prompts: FeelGoodPost[];
+      notPrompts: FeelGoodPost[];
+    }>(
+      (acc, current) => {
+        // If type of post is "prompt", add to prompt list
+        if (current.type === "prompt")
+          return {
+            prompts: [...acc.prompts, current],
+            notPrompts: acc.notPrompts
+          };
+        // Otherwise, add to the list of every other kind of post
+        else
+          return {
+            notPrompts: [...acc.notPrompts, current],
+            prompts: acc.prompts
+          };
+      },
+      { prompts: [], notPrompts: [] }
+    );
+
+    // Interlace prompts into every other post. Frequency defined by PromptFrequency
+    return notPrompts.reduce<{ array: FeelGoodPost[]; promptInterval: number }>(
+      (acc, cur) => {
+        if (acc.promptInterval >= PromptFrequency && prompts.length > 0) {
+          return {
+            promptInterval: 0,
+            array: [...acc.array, prompts.shift(), cur]
+          };
+        } else {
+          return {
+            promptInterval: acc.promptInterval + 1,
+            array: [...acc.array, cur]
+          };
+        }
+      },
+      { array: [], promptInterval: 0 }
+    ).array;
+  });
+
+  console.log(orderedPosts);
 
   /**
    * When provided the height of element and current location, it determines the currently visible post and notifies the parent
@@ -69,9 +124,11 @@ const FeelGoodPostList: React.FC<{
    */
   const currentVisiblePost = React.useCallback(
     (scrollHeight: number, scrollLocation: number) => {
+      // Get the current position of the scrollbar
       const newPostScrollPosition = Math.round(
         scrollLocation / (scrollHeight / (props.posts.length + 2))
       );
+      // If the post is different than the previous one, notify the event handler
       if (newPostScrollPosition !== currentPost) {
         props.scrollPostHandler(newPostScrollPosition);
         setCurrentPost(newPostScrollPosition);
@@ -102,7 +159,7 @@ const FeelGoodPostList: React.FC<{
           </h2>
         </FlexCenter>
       </SpecialSnapItem>
-      {props.posts.map(post => (
+      {(orderedPosts || []).map(post => (
         <SnapItem key={post.name}>
           <FeelGoodPostItem post={post} />
         </SnapItem>

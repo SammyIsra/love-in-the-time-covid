@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
   switch (props.post.type) {
+    case "prompt":
     case "text":
       return <FeelGoodText post={props.post} />;
     case "article":
