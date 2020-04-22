@@ -9,6 +9,12 @@ import {
 import { FlexCenter } from "./layout/indexPage";
 import styled from "styled-components";
 
+/**
+ * Receives any item of type FellGoodPosts and triages the post to the correct component.
+ *  Currently, only uses posts of type Prompt, Text, Article, and Image,
+ *  all other posts are ignored.
+ * @param props
+ */
 export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
   switch (props.post.type) {
     case "prompt":
@@ -24,7 +30,7 @@ export const FeelGoodPostItem: React.FC<{ post: FeelGoodPost }> = props => {
 };
 
 /**
- * Used when the type of post is a Text
+ * Used when the of post is a Text
  * The type of post can also be a Prompt, which is functionally identical to a Text one
  * @param props
  */
@@ -39,7 +45,7 @@ const FeelGoodText: React.FC<{ post: TextPost | PromptPost }> = props => {
 };
 
 /**
- * Used when the type of post is an Article.
+ * Used when the post is an Article.
  * We hope that the "source" is present but we cannot be sure.
  * @param props
  */
@@ -58,7 +64,7 @@ const FeelGoodArticle: React.FC<{ post: ArticlePost }> = props => {
 };
 
 /**
- * Used when the type of Post is an Image.
+ * Used when the post is an Image.
  * @param props
  */
 const FeelGoodImage: React.FC<{ post: ImagePost }> = props => {
@@ -83,6 +89,7 @@ const Source = styled.p`
   }
 `;
 
-const ConditionalSource: React.FC<{ source: string }> = ({ source }) => {
+/** Helper function to deal with source display when the source is optional */
+const ConditionalSource: React.FC<{ source?: string }> = ({ source }) => {
   return source ? <p>-{source}</p> : null;
 };

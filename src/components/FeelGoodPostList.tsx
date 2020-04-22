@@ -2,12 +2,11 @@ import React from "react";
 import {
   VerticalSnapContainer,
   SnapItem,
-  SpecialSnapItem,
-  FlexCenter
+  SpecialSnapItem
 } from "./layout/indexPage";
 import { FeelGoodPostItem } from "./PostItem";
-import { graphql, useStaticQuery } from "gatsby";
 
+/** Base type of all posts. Contains the fields common to every other type of post */
 type BasePost = {
   title: string;
   summary: string;
@@ -42,6 +41,7 @@ export type ImagePost = BasePost & {
   url: string;
 };
 
+/** Union type for all posts */
 export type FeelGoodPost =
   | TextPost
   | ArticlePost
@@ -49,32 +49,38 @@ export type FeelGoodPost =
   | ImagePost
   | PromptPost;
 
-/** Determines the frequency of how often */
+/** Determines the frequency of how often Prompts post show up */
 const PromptFrequency = 4;
 
+/**
+ * Takes in the list of all posts and takes responsibility of sorting and
+ *  filtering, as well as interlacing Prompt posts inbetween all other posts.
+ * @param props
+ */
 const FeelGoodPostList: React.FC<{
   posts: FeelGoodPost[];
   scrollPostHandler: (scrollNumber: number) => void;
 }> = props => {
-  // Just used to get the title of the page
-  const metadata = useStaticQuery<{
-    site: {
-      siteMetadata: { title: string };
-    };
-  }>(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `).site.siteMetadata;
+  // Just used to get the title of the page (currently unused)
+  // const metadata = useStaticQuery<{
+  //   site: {
+  //     siteMetadata: { title: string };
+  //   };
+  // }>(graphql`
+  //   query {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `).site.siteMetadata;
 
-  // Keep track of the previous visible post
+  // Keep track of the previously visible post
   const [currentPost, setCurrentPost] = React.useState(0);
 
   // List of posts interlaced with prompts
+  // Value of it set in the React.UseEffect right below.
   const [orderedPosts, setOrderedPosts] = React.useState<FeelGoodPost[]>([]);
 
   // UseEffect to set the interlaced OrderedPosts
@@ -101,7 +107,7 @@ const FeelGoodPostList: React.FC<{
       { prompts: [], notPrompts: [] }
     );
 
-    // Interlace prompts into every other post. Frequency defined by PromptFrequency
+    // Interlace prompts into every other post. Frequency defined by PromptFrequency.
     setOrderedPosts(
       notPrompts.reduce<{
         array: FeelGoodPost[];
@@ -156,7 +162,7 @@ const FeelGoodPostList: React.FC<{
       <SpecialSnapItem>
         <FeelGoodPostItem
           post={{
-            type: "text" as const,
+            type: "text",
             public: true,
             publishDate: "doesn't matter",
             title: "Hi, we're glad you're here. 💛",
@@ -168,7 +174,7 @@ const FeelGoodPostList: React.FC<{
           }}
         />
       </SpecialSnapItem>
-      {(orderedPosts || []).map(post => (
+      {orderedPosts.map(post => (
         <SnapItem key={post.name}>
           <FeelGoodPostItem post={post} />
         </SnapItem>
@@ -176,7 +182,7 @@ const FeelGoodPostList: React.FC<{
       <SpecialSnapItem>
         <FeelGoodPostItem
           post={{
-            type: "text" as const,
+            type: "text",
             public: true,
             publishDate: "doesn't matter",
             title: "Come again soon! 💛",
