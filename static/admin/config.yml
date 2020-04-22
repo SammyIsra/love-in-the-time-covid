@@ -40,6 +40,7 @@ collections:
           - { label: "Online article", value: "article" }
           - { label: "Tweet", value: "tweet" }
           - { label: "Image", value: "image" }
+          - { label: "Prompt", value: "prompt" }
       - { label: "Title", name: "title", widget: "string", required: true }
       - { label: "Summary", name: "summary", widget: "string" }
       - { label: "Source", name: "source", widget: "string", required: false }
@@ -109,7 +110,6 @@ collections:
           - { label: "Online article", value: "article" }
           - { label: "Tweet", value: "tweet" }
           - { label: "Image", value: "image" }
-          - { label: "Prompt", value: "prompt" }
       - { label: "Title", name: "title", widget: "string", required: true }
       - {
           label: "Summary",
