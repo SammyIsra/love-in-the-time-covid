@@ -161,7 +161,7 @@ const FeelGoodPostList: React.FC<{
             publishDate: "doesn't matter",
             title: "Hi, we're glad you're here. 💛",
             summary:
-              "Times are tough right now and it's easy to be overwhelmed. However, amidst the bad, there is still good." +
+              "Times are tough right now and it's easy to be overwhelmed. However, amidst the bad, there is still good. " +
               "Scroll through the below stack of stories for a quick and uplifting mindfulness break.",
             name: "welcome-post",
             source: ""
@@ -181,7 +181,7 @@ const FeelGoodPostList: React.FC<{
             publishDate: "doesn't matter",
             title: "Come again soon! 💛",
             summary:
-              "That's all for now, though we'll be working to continuously update these stories. Check back soon for fresh content! 🍆" +
+              "That's all for now, though we'll be working to continuously update these stories. Check back soon for fresh content! 🍆 " +
               "Have a great day, and don't forget, we will get through this together.",
             name: "farewell-post",
             source: ""
