@@ -1,7 +1,7 @@
 {
   "templateKey": "blog-post",
   "type": "image",
-  "public": false,
+  "public": true,
   "publishDate": "2020-04-23 16:47",
   "summary": "Looks about right.",
   "title": "💯",
