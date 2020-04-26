@@ -1,7 +1,7 @@
 {
   "templateKey": "blog-post",
   "type": "article",
-  "public": false,
+  "public": true,
   "publishDate": "2020-04-23 16:47",
   "summary": "Fortunately Newfoundland is one of the best prepared places in the world to deal with something like COVID. Things are quite rural, spread out, and just beautiful views all around! 🌊",
   "title": "6 days straight of no-new-cases in Newfoundland, Canada 🍁",
